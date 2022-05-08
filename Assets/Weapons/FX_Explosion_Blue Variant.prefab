@@ -74,4 +74,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65d1b29cf75012d4d81c5d1aacd45fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetDistance: 3
+  data: {fileID: 11400000, guid: ce43e6388b00f7444a8753f5d6e73153, type: 2}

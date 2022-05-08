@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class Bayonetta : MonoBehaviour
 {
+    [SerializeField] BayonettaTP data;
     public GameObject bullet;
     public GameObject explosionEffect;
     public Material bulletMaterial;
 
-    float radius = 5.0f;
-    float power = 500.0f;
+    float radius;
+    float power;
+    float frontForce;
 
+    private void Start()
+    {
+        radius = data.Radius;
+        power = data.Power;
+        frontForce = data.FrontForce;
+    }
 
     public void Shoot()
     {
         Debug.Log("Puumm from Bayonetta");
         GameObject currentBullet = Instantiate(bullet, transform.position, Quaternion.identity);
         currentBullet.GetComponent<Renderer>().material = bulletMaterial;
-        currentBullet.GetComponent<Rigidbody>().AddForce(transform.right * 500);
+        currentBullet.GetComponent<Rigidbody>().AddForce(transform.right * frontForce);
         StartCoroutine(Explosion(currentBullet));
     }
 

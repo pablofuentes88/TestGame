@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -50,6 +47,7 @@ public class UI_SelectDance : MonoBehaviour
         if (blendTransition == newState) return;
         this.newState = newState;
         activeTrigger = true;
+        //GameObject.Find("ely_k_atienza").GetComponent<AnimatorSelected>().ANIMATED_SELECTED = newState;
     }
 
     private void Trigger()
