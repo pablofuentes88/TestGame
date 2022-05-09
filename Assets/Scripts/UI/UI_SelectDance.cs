@@ -9,7 +9,7 @@ public class UI_SelectDance : MonoBehaviour
     private const float HOUSE = 1f;
     private const float WAVE = 2f;
 
-    private float newState;
+    private float newState = 0.0f;
     private float blendTransition = 0.0f;
     private float blendAcceleration = 0.3f;
     bool activeTrigger = false;
@@ -24,6 +24,7 @@ public class UI_SelectDance : MonoBehaviour
 
     public void PlayGame()
     {
+        StateController.animationSelected = this.newState;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
